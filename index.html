@@ -6,28 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entry Page</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
 
 <body>
-    <nav>
-        <div class="logo">
-            <h1>Potter DB</h1>
+    <div class="container">
+        <div id="start-screen" class = "screen ">
+            <h1>Quiz Time!</h1>
+            <p>Test your knowledge with these fun questions</p>
+            <button>Start Quiz</button>
         </div>
-        <div class="options">
-            <div class="list">
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Docs</a></li>
-                    <li><a href="#">Status</a></li>
-                </ul>
+        <div id="quiz-screen" class = "screen active">
+            <h2>What is the capital city of France?</h2>
+            <div id="quiz-info">
+                <p>Question <span>1</span> of <span>5</span></p>
+                <p>Score: <span>0</span></p>
             </div>
-            <i class="fa-solid fa-bars"></i>
+            <div id="quiz-options">
+                <button class = "opt-btn">London</button>
+                <button class = "opt-btn">London</button>
+                <button class = "opt-btn">London</button>
+                <button class = "opt-btn">London</button>
+            </div>
+            <div class="progess">
+                <div id="progess" class = "progress"></div>
+            </div>
         </div>
-
-    </nav>
+        <div id="result-screen" class = "screen ">
+            <h1>Quiz Results</h1>
+            <div id="quiz-score">
+                <p>You scored <span>0</span> out of <span>5</span></p>
+                <h3 class = "final-result">Good effort! Keep Learning</h3>
+            </div>
+            <button>Restart Quiz</button>
+        </div>
+    </div>
     <script src="app.js"></script>
 </body>
 
