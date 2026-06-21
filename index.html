@@ -9,34 +9,43 @@
 
 <body>
     <div class="container">
-        <div id="start-screen" class = "screen ">
+        <div id="start-screen" class = "screen active">
             <h1>Quiz Time!</h1>
             <p>Test your knowledge with these fun questions</p>
-            <button>Start Quiz</button>
+            <button id = "start-btn">Start Quiz</button>
         </div>
-        <div id="quiz-screen" class = "screen active">
-            <h2>What is the capital city of France?</h2>
-            <div id="quiz-info">
-                <p>Question <span>1</span> of <span>5</span></p>
-                <p>Score: <span>0</span></p>
+        
+        <div id="quiz-screen" class = "screen">
+            
+            <div id="quiz-header">
+                <h2 id="question-text">Question goes here</h2>
+                <div class="quiz-info">
+                    <p>
+                        Question <span id="current-question">1</span> of <span>5</span>
+                    </p>
+                    <p>
+                        Score: <span id="score">0</span>
+                    </p>
+                </div>
             </div>
-            <div id="quiz-options">
-                <button class = "opt-btn">London</button>
-                <button class = "opt-btn">London</button>
-                <button class = "opt-btn">London</button>
-                <button class = "opt-btn">London</button>
+            
+            <div id="answers-container" class = "answers-container">
+                <!-- Answers buttons will be inserted here from our js code later at some point -->
             </div>
-            <div class="progess">
+            <div class="progess-bar">
                 <div id="progess" class = "progress"></div>
             </div>
         </div>
-        <div id="result-screen" class = "screen ">
+        
+        <div id="result-screen" class = "screen">
             <h1>Quiz Results</h1>
-            <div id="quiz-score">
-                <p>You scored <span>0</span> out of <span>5</span></p>
-                <h3 class = "final-result">Good effort! Keep Learning</h3>
+            <div id="result-info">
+                <p>You scored <span id="final-score">0</span> out of <span id="max-score">5</span></p>
+                <div id="result-message">
+                    Good job!
+                </div>
             </div>
-            <button>Restart Quiz</button>
+            <button id="restart-btn">Restart Quiz</button>
         </div>
     </div>
     <script src="app.js"></script>

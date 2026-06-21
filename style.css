@@ -1,135 +1,172 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 * {
     margin:0;
-    padding:0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: poppins;
-    text-decoration: none;
-    list-style-type: none;
+    font-family:sans-serif;
 }
 
 body {
-    min-height:100vh;
-    width:100%;
+    background-color:#f5efe6;
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color:#f5efe6;
+    min-height:100vh;
+    padding:1rem;
 }
 
 .container {
-    max-width:600px;
+    background-color:white;
     border-radius:1rem;
     box-shadow:0 10px 30px rgba(0,0,0,0.1);
-    background-color:white;
-    position:relative;
-    padding:1.5rem 1.5rem 0 1.5rem;
+    width:100%;
+    max-width:600px;
+    overflow:hidden;
 }
 
+/* SCREENS */
 .screen {
     display:none;
-    margin-bottom:2rem;
+    padding:2rem;
     text-align:center;
-    line-height:1.4;
 }
 
-.active {
+.screen.active {
     display:block;
 }
 
-#start-screen h1{
+/* START SCREEN */
+
+#start-screen h1 {
     color:#e86a33;
+    margin-bottom:20px;
     font-size:2.5rem;
-    font-weight: bold;
-    margin-bottom:1.5rem;
 }
 
 #start-screen p {
-    color:#333;
-    margin-bottom:2.5rem;
-}
-
-#start-screen button {
-    min-width:150px;
-    padding:10px 5px;
-    border:none;
-    border-radius:0.5rem;
-    background-color:#e86a33;
-    color:white;
-    margin-bottom:1rem;
-    font-size:1.25rem;
-}
-
-#quiz-screen h2 {
-    margin-bottom:1rem;
-    font-size:1.5rem;
-    padding:1rem;
-    color:#333;
-}
-
-#quiz-info {
-    display:flex;
-    width:100%;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#quiz-info p {
     color:#666;
-    margin-bottom:1rem;
+    margin-bottom: 30px;
+    font-size:1.1rem;
+}
+
+.quiz-header {
+    margin-bottom: 2rem;
+}
+
+#question-text {
+    color:#333;
+    font-size:1.5rem;
+    margin-bottom: 1rem;
+    line-height:1.4;
+}
+
+.quiz-info {
+    display:flex;
+    justify-content: space-between;
+    color:#666;
+    margin-bottom: 10px;
+}
+
+.answers-container {
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    margin-bottom: 25px;
+}
+
+.answer-btn {
+    background-color: #f8f0e5;
+    color:#333;
+    border:2px solid #eadbc8;
+    border-radius:10px;
+    padding:1rem;
+    cursor:pointer;
+    text-align:start;
+    transition:all 0.3s ease;
+}
+
+.answer-btn:hover {
+    background-color:#eadbc8;
+    border-color:#dac0ae;
+}
+
+.answer-btn.corret {
+    background-color:#e6fff0;
+    border-color:#a3f0c4;
+    color:#28a745;
+}
+
+.answer-btn.incorret {
+    background-color:#fff0f0;
+    border-color:#ffbdbd;
+    color:#dc3545;
+}
+
+.progress-bar {
+    height:10px;
+    background-color: #f8f0e5;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 20px;
 }
 
 .progress {
-    min-width:100%;
-    padding:5px;
-    border-radius:0.5rem;
-    margin-top:1.5rem;
-    margin-bottom:0;
-    background-color:#f5efe6;
+    height:100%;
+    background-color: #e86a33;
+    width:0%;
+    transition:width 0.3s ease;
 }
 
-.opt-btn {
-    min-width:100%;
-    padding:1rem 0.5rem;
-    border:none;
-    border-radius:0.5rem;
-    margin-bottom:1.25rem;
-    text-align:start;
-}
-
+/* RESULT SCREEN */
 #result-screen h1 {
     color:#e86a33;
-    margin-bottom:1rem;
-    padding:5px;
+    margin-bottom: 30px;
 }
 
-#quiz-score {
-    min-width:100%;
-    background-color:#f5efe6;
-    border-radius:0.5rem;
-    padding:1rem;
-    margin-bottom:2.5rem;
+.result-info {
+    background-color: #f8f0e5;
+    border-radius: 10px;
+    padding:20px;
+    margin-bottom: 30px;
 }
 
-#quiz-score p {
+.result-info p {
+    font-size:1.2rem;
     color:#333;
-    margin-bottom:1rem;
-    font-size:1.25rem;
+    margin-bottom: 1rem;
+
 }
 
-#quiz-score .final-result{
+#result-message {
+    font-size:1.5rem;
+    font-weight:600;
     color:#e86a33;
-    font-size:2rem;
 }
 
-#result-screen button {
-    min-width:150px;
-    padding:1rem 0.25rem;
-    border:none;
-    border-radius:0.5rem;
-    font-size:1.25rem;
-    background-color:#e86a33;
+button {
+    background: #e86a33;
     color:white;
-    margin-bottom:1.25rem;
+    border:none;
+    border-radius: 10px;
+    padding:15px 30px;
+    font-size:1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+button:hover {
+    background-color:#d45b28;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 500px) {
+    /* when we hit 500px and below screensize, implement the styles below*/
+
+    .screen {
+        padding:1rem;
+    }
+    #start-screen h1 {
+        font-size:2rem;
+    }
+
+}
